@@ -4,6 +4,7 @@
   "description": "people meet for coffee",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,9 @@
     "ejs": "^2.5.2",
     "hapi": "^15.0.3",
     "mailgun-js": "^0.7.12",
-    "mongodb": "^2.2.10"
+    "inert": "^4.0.2",
+    "mongoose": "^4.6.0",
+    "validator": "^5.7.0",
+    "vision": "^4.1.0"
   }
 }

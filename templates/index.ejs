@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Matching people up for coffee.">
+
+  <title>Coffee Talk</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="css/layouts/marketing.css">
+  <!--<![endif]-->
+</head>
+<body>
+  <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+          <a class="pure-menu-heading" href="">Coffee Talk</a>
+
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+              <li class="pure-menu-item"><a href="#signup" class="pure-menu-link">Sign Up</a></li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="feedback">
+    <div class="failure" hidden>
+      Something didn't work when you signed up. <a href="#signup">Try again!</a>
+    </div>
+
+    <div class="success" hidden>
+      Awesome! Got it. We'll send you an email on Monday to get rolling.
+    </div>
+  </div>
+
+  <script>
+  (function (window, undefined) {
+    function includesParameter(paramString) {
+      return window.location.search.indexOf(paramString) !== -1
+    }
+
+    function unhideElement(selector) {
+      document.querySelector(selector).removeAttribute('hidden')
+    }
+
+    if (includesParameter('signup=failure')) {
+      unhideElement('.feedback .failure')
+    }
+
+    if (includesParameter('signup=success')) {
+      unhideElement('.feedback .success')
+    }
+  })(window)
+  </script>
+
+  <div class="splash-container">
+      <div class="splash">
+
+          <h1 class="splash-head">Coffee Talk</h1>
+          <p class="splash-subhead">
+              Do you want to meet to network with other folks in Athens, OH? Get connected every Friday for either a coffee or beer meetup. Signup below!
+          </p>
+          <p>
+              <a href="#signup" class="pure-button pure-button-primary">Signup</a>
+          </p>
+      </div>
+  </div>
+
+  <div class="content-wrapper">
+      <div id="signup" class="content">
+          <h2 class="content-head is-center">Sign up to network in Athens, OH</h2>
+
+          <div class="pure-g">
+              <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                  <form class="pure-form pure-form-stacked" action="/signup" method="POST">
+                      <fieldset>
+
+                          <label for="name">Your Name</label>
+                          <input name="name" type="text" placeholder="Your Name" required>
+
+                          <label for="email">Your Email</label>
+                          <input name="email" type="email" placeholder="Your Email" required>
+
+                          <button type="submit" class="pure-button">Sign Up</button>
+                      </fieldset>
+                  </form>
+              </div>
+
+              <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                  <h4>Contact Us</h4>
+                  <p>
+                      Have a problem and can't figure out what's up? Let us know at info@athensworks.com
+                  </p>
+
+                  <h4>More Information</h4>
+                  <p>
+                      If you'd like to buy us a coffee to thank us for a job well done. Don't! Instead, come check out Athensworks at 29 East Carpenter in Athens, OH.
+                  </p>
+              </div>
+          </div>
+
+      </div>
+      <div class="footer l-box is-center">
+          Made with love by <a href="http://www.athensworks.com">Athensworks</a>.
+      </div>
+
+  </div>
+</body>
+</html>
