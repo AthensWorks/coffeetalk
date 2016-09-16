@@ -9,10 +9,9 @@ people: [
   { 
     "name": "name",
     "email": "email",
-    <hashed_authentication_stuff?>,
-    "availability": "morning" / "afternoon" / "both" / null,
+    "availability": "morning" / "afternoon" / "both" / "none",
     "previousMatches": [
-        <people> 
+        <person> 
     ]
   }, ...
 ]
