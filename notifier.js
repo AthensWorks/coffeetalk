@@ -4,13 +4,13 @@ var Mailgun = require('mailgun-js');
 var ejs = require('ejs');
 
 //Your api key, from Mailgun’s Control Panel
-var api_key = 'key-026f6a5a5923dfab92341d165afe9cae';
+var api_key = process.env.MAILGUN_KEY;
 
 //Your domain, from the Mailgun Control Panel
-var domain = 'athensworks.com';
+var domain = process.env.MAILGUN_DOMAIN || 'athensworks.com';
 
 //Your sending email address
-var from_who = 'coffeetalk@athensworks.com';
+var from_who = process.env.MAILGUN_FROM || 'coffeetalk@athensworks.com';
 
 var people = [{
     "name": "hi",
