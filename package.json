@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AthensWorks/coffeetalk#readme",
   "dependencies": {
+    "ejs": "^2.5.2",
     "hapi": "^15.0.3",
     "mailgun-js": "^0.7.12",
     "mongodb": "^2.2.10"
