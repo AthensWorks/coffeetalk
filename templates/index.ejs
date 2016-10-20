@@ -23,17 +23,6 @@
   <!--<![endif]-->
 </head>
 <body>
-  <div class="header">
-      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-          <a class="pure-menu-heading" href="">Coffee Talk</a>
-
-          <ul class="pure-menu-list">
-              <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
-              <li class="pure-menu-item"><a href="#signup" class="pure-menu-link">Sign Up</a></li>
-          </ul>
-      </div>
-  </div>
-
   <div class="feedback">
     <div class="failure" hidden>
       Something didn't work when you signed up. <a href="#signup">Try again!</a>
@@ -54,13 +43,22 @@
       document.querySelector(selector).removeAttribute('hidden')
     }
 
-    if (includesParameter('signup=failure')) {
-      unhideElement('.feedback .failure')
+    function hideElement(selector) {
+      document.querySelector(selector).setAttribute('hidden', true)
     }
 
-    if (includesParameter('signup=success')) {
-      unhideElement('.feedback .success')
-    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      console.log("DOMReady")
+      if (includesParameter('signup=failure')) {
+        unhideElement('.feedback .failure')
+      }
+
+      if (includesParameter('signup=success')) {
+        unhideElement('.feedback .success')
+        hideElement('.content-wrapper #signup')
+      }
+    })
+
   })(window)
   </script>
 
