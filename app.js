@@ -12,6 +12,7 @@ const Person    = mongoose.model('Person',
                         email: {
                           type: String,
                           required: true,
+                          index: true,
                           unique: true,
                           validator: (value) =>
                              validator.isEmail(value)
