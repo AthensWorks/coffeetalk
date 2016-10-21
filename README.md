@@ -11,6 +11,7 @@ people: [
   {
     "name": "name",
     "email": "email",
+    "emailConfirmed": false,
     "availability": "morning" / "afternoon" / "both" / "none",
     "previousMatches": [
         <person>
