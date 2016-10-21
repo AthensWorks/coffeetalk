@@ -74,6 +74,24 @@ server.register([require('vision'), require('inert')], (err) => {
   });
 });
 
+// route unsubscribe email
+  server.route({
+      method: 'GET',
+      path: '/unsubscribe',
+      handler: function(request, reply) {
+          const { email } = request.query
+
+          Person.findOneAndRemove({email: email}, function(err, person) {
+              if (err){
+                  console.log(err)
+                  reply.redirect('/?message="User does not exist"')
+              }else{
+                  reply.redirect('/?message="You have been unsubscribed"')
+              }
+          });
+      }
+  });
+
 server.start((err) => {
   if (err) {
     throw err
